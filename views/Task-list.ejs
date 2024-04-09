@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('partials/head.ejs')%>
+        <%- include('partials/head.ejs') %>
     </head>
     <body>
         <%- include('partials/navigation.ejs') %>
         <h1>Tasks list</h1>
-        <p>This is a simple web application designed to help you manage your homework tasks effectively. You can add new tasks, set deadlines, and mark tasks as completed.</p>
-        <p>Use the navigation menu above to start managing your tasks.</p>
+        <ul>
+            <% tasks.forEach(task => { %>
+                <li>
+                    <h2><%= task.title %></h2>
+                    <p>ID: <%= task.id %></p>
+                    <p>Description: <%= task.description || 'No description provided' %></p>
+                    <p>Finish date: <%= task.finishDate ? task.finishDate : 'No deadline set' %></p>
+                    <p>Status: <%= task.done ? 'Completed' : 'Not completed' %></p>
+                </li>
+            <% }); %>
+        </ul>
     </body>
 </html>

@@ -33,7 +33,8 @@ function loadTasks() {
     }
 }
 
-function addTask(task) {
+function addTask(title, description, finishDate, done, id = getFreeId()) {
+    const taskToAdd = new Task(id, title, description, finishDate, done);
     const tasks = loadTasks();
     tasks.push(task);
     saveTasks(tasks);
