@@ -36,13 +36,16 @@ function loadTasks() {
 function addTask(title, description, finishDate, done, id = getFreeId()) {
     const taskToAdd = new Task(id, title, description, finishDate, done);
     const tasks = loadTasks();
-    tasks.push(task);
+    tasks.push(taskToAdd);
     saveTasks(tasks);
 }
 
 function deleteTask(id) {
     const tasks = loadTasks();
-    return tasks.filter(task => task.id !== id);
+    tasks.forEach(task => { console.log(task.id, task.id !== id); });
+    const fixedTasks = tasks.filter(task => task.id !== id);
+    console.log(fixedTasks);
+    saveTasks(fixedTasks);
 }
 
 function getTask(id) {
@@ -50,13 +53,22 @@ function getTask(id) {
     return tasks.find(task => task.id === id);
 }
 
-function updateTask(id, title, description, finishDate, done) {
+function updateTask(id, newTitle, newDescription, newFinishDate, newDone) {
+    let tasks = loadTasks();
+    console.log(tasks);
+    tasks.find(task => task.id === id).updateTask(newTitle, newDescription, newFinishDate, newDone);
+    console.log(tasks);
+    saveTasks(tasks);
+}
+
+function deleteAllTasks() {
+    saveTasks([]);
+}
+
+function markTaskAsDone(id) {
     const tasks = loadTasks();
-    const task = tasks.find(task => task.id === id);
-    task.title = title;
-    task.description = description;
-    task.finishDate = finishDate;
-    task.done = done;
+    let taskToUpdate = getTask(id);
+    taskToUpdate.markAsDone();
     saveTasks(tasks);
 }
 
@@ -87,4 +99,6 @@ module.exports = {
     getTask,
     updateTask,
     getFreeId,
+    markTaskAsDone,
+    deleteAllTasks,
 };

@@ -20,10 +20,18 @@ app.get('/', homeController.getHomePage);
 app.get('/tasks-list', tasksController.getTaskList);
 
 app.get('/add-task', tasksController.getAddTask);
-
 app.post('/add-task', tasksController.postAddTask);
-
 app.get('/success-add', tasksController.getSuccessAdd);
+
+app.get('/edit-task/:id', tasksController.getEditTask);
+app.post('/edit-task/:id', tasksController.postEditTask);
+app.get('/success-edit', tasksController.getSuccessEdit);
+
+app.get('/delete-task/:id', tasksController.getDeleteTask);
+app.get('/success-delete', tasksController.getSuccessDelete);
+
+app.get('/delete-all', tasksController.getDeleteAllTasks);
+app.get('/success-all-delete', tasksController.getSuccessAllDelete);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);

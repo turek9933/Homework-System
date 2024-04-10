@@ -10,12 +10,17 @@
             <% tasks.forEach(task => { %>
                 <li>
                     <h2><%= task.title %></h2>
-                    <p>ID: <%= task.id %></p>
+                    <!--
+                        <p>ID: <%= task.id %></p>
+                    -->
                     <p>Description: <%= task.description || 'No description provided' %></p>
                     <p>Finish date: <%= task.finishDate ? task.finishDate : 'No deadline set' %></p>
                     <p>Status: <%= task.done ? 'Completed' : 'Not completed' %></p>
+                    <a href="/edit-task/<%= task.id %>">Edit</a> | 
+                    <a href="/delete-task/<%= task.id %>" onclick="return confirm('Are you sure?');">Delete</a>
                 </li>
             <% }); %>
         </ul>
+        <a href="/delete-all" onclick="return confirm('Are you sure?');">DELETE ALL TASKS</a>
     </body>
 </html>

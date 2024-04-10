@@ -14,9 +14,18 @@ class Task {
     }
     updateFinishDate(newFinishDate) {
       this.finishDate = newFinishDate;
-    }  
+    }
+    updateStatus(newDone) {
+      this.done = newDone;
+    }
     markAsDone() {
       this.done = true;
+    }
+    updateTask(newTitle, newDescription, newFinishDate, newDone) {
+      this.updateTitle(newTitle);
+      this.updateDescription(newDescription);
+      this.updateFinishDate(newFinishDate);
+      this.updateStatus(newDone);
     }
 }
 
