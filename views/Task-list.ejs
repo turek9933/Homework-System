@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
         <%- include('partials/navigation.ejs') %>
@@ -9,18 +10,28 @@
         <ul>
             <% tasks.forEach(task => { %>
                 <li>
-                    <h2><%= task.title %></h2>
+                    <h3><%= task.title %></h3>
                     <!--
                         <p>ID: <%= task.id %></p>
                     -->
                     <p>Description: <%= task.description || 'No description provided' %></p>
                     <p>Finish date: <%= task.finishDate ? task.finishDate : 'No deadline set' %></p>
                     <p>Status: <%= task.done ? 'Completed' : 'Not completed' %></p>
-                    <a href="/edit-task/<%= task.id %>">Edit</a> | 
-                    <a href="/delete-task/<%= task.id %>" onclick="return confirm('Are you sure?');">Delete</a>
+                    <div class="task-actions">
+                        <form action="/edit-task/<%= task.id %>" method="get">
+                            <button type="submit">Edit</button>
+                        </form>
+                        <form action="/delete-task/<%= task.id %>" method="post" onsubmit="return confirm('Are you sure?');">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
                 </li>
             <% }); %>
         </ul>
-        <a href="/delete-all" onclick="return confirm('Are you sure?');">DELETE ALL TASKS</a>
+        <div class="delete-all">    
+            <form action="/delete-all" method="post" onsubmit="return confirm('Are you sure?');">
+                <button type="submit" class="delete-all-button">DELETE ALL TASKS</button>
+            </form>
+        </div>
     </body>
 </html>

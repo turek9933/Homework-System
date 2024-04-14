@@ -1,0 +1,127 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce7c7c3;
+    margin: 0;
+    padding: 40px;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #444;
+    text-align: center;
+}
+
+a, nav a {
+    color: rgb(77, 138, 3);
+    text-decoration: none;
+}
+nav a {
+    margin: 10px;
+    padding: 10px;
+    font: 1.5em;
+}
+nav {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-align: center;
+    border: 2px solid rgb(77, 138, 3);
+    display: inline-block;
+}
+
+form {
+    background: #f8ddb5;
+    padding: 30px;
+    border-radius: 6px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-radio-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 10px 10px 10px;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background: rgb(77, 138, 3);
+    color: #fff;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+}
+li {
+    background: #f8ddb5;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 40%;
+}
+
+li h3 {
+    margin: 5px;
+}
+
+li p {
+    margin: 10px 0 10px 10px;
+}
+
+.task-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.task-actions form {
+    padding: 0;
+}
+
+.task-actions button {
+    align-items: flex-start;
+    border: none;
+    margin: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.delete-all {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.delete-all form {
+    padding: 0;
+}
+
+.delete-all button {
+    background-color: #b10f00;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}

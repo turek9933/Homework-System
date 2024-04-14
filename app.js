@@ -11,6 +11,8 @@ const app = express();
 
 const PORT = 3000;
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -27,7 +29,7 @@ app.get('/edit-task/:id', tasksController.getEditTask);
 app.post('/edit-task/:id', tasksController.postEditTask);
 app.get('/success-edit', tasksController.getSuccessEdit);
 
-app.get('/delete-task/:id', tasksController.getDeleteTask);
+app.post('/delete-task/:id', tasksController.postDeleteTask);
 app.get('/success-delete', tasksController.getSuccessDelete);
 
 app.get('/delete-all', tasksController.getDeleteAllTasks);

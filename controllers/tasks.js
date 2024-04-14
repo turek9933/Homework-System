@@ -54,7 +54,7 @@ const getSuccessEdit = (req, res) => {
     getSuccess(req, res);
 }
 
-const getDeleteTask = (req, res) => {
+const postDeleteTask = (req, res) => {
     const {id} = req.params;
     const fixedId = parseInt(id);
     console.log(fixedId);
@@ -87,7 +87,7 @@ module.exports = {
     postEditTask,
     getSuccessEdit,
 
-    getDeleteTask,
+    postDeleteTask,
     getSuccessDelete,
 
     getDeleteAllTasks,

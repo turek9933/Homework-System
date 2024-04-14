@@ -1,0 +1,22 @@
+<form action="<%= formAction %>" method="POST">
+    <div>
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="<%= task ? task.title : '' %>" required>
+    </div>
+    <div>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"><%= task ? task.description : '' %></textarea>
+    </div>
+    <div class="form-date">
+        <label for="finishDate">Finish Date:</label><br>
+        <input type="date" id="finishDate" name="finishDate" value="<%= task ? task.finishDate : '' %>">
+    </div>
+    <div>
+        <label>Czy wykonane:</label><br>
+        <div class="form-radio-buttons">
+            <input type="radio" name="done" value="true" <%= task && task.done ? 'checked' : '' %>>TAK
+            <input type="radio" name="done" value="false" <%= task && !task.done ? 'checked' : '' %>>NIE
+        </div>
+    </div>
+    <button type="submit"><%= submitButtonText %></button>
+</form>

@@ -2,33 +2,15 @@
 <html lang="en">
     <head>
         <%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
         <%- include('partials/navigation.ejs') %>
         <h1>Edit Task</h1>
-        <form action="/edit-task/<%= task.id %>" method="POST">
-            <div>
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required value="<%= task.title %>">
-            </div>
-            <div>
-                <label for="description">Description:</label>
-                <textarea id="description" name="description"><%= task.description %></textarea>
-            </div>
-            <div>
-                <label for="finishDate">Finish Date:</label>
-                <input type="date" id="finishDate" name="finishDate" value="<%= task.finishDate %>">
-            </div>
-            <div>
-                <label>Czy wykonane:</label>
-                <label>
-                    <input type="radio" name="done" value="true" <%= task.done ? 'checked' : '' %>> TAK
-                </label>
-                <label>
-                    <input type="radio" name="done" value="false" <%= !task.done ? 'checked' : '' %>> NIE
-                </label>
-            </div>
-            <button type="submit">Update Task</button>
-        </form>
+        <%- include('partials/taskForm.ejs', { 
+            formAction: '/edit-task/' + task.id, 
+            task: task, 
+            submitButtonText: 'Update Task' 
+        }) %>
     </body>
 </html>
