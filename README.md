@@ -6,31 +6,36 @@ v.1.0
 
 # Tytuł: System zarządzania zadaniami domowymi
 
+## Spis treści
+
+1. [Opis projektu i funkcjonalności](#opis-projektu-i-funkcjonalności)
+    1. [Opis ogólny](#opis-ogólny)
+    2. [Funkcjonalności](#funcjonalności)
 
 # Opis projektu i funkcjonalności
 
 ## Opis ogólny
 
-Aplikacja jest przeglądarkowa. Służy ona do zarządzania zadaniami użytkownika. Pozwala ona na wyświetlanie zapisanych zadań, dodawanie nowych, edycję i usuwanie zapisanych zadań.\
-Wszystkie okienka mają nawigację do widoku głównego, do podglądu zapisanych zadań i do dodwania nowych.
+Aplikacja jest przeglądarkowa. Służy ona do zarządzania zadaniami użytkownika. Pozwala ona na wyświetlanie zapisanych zadań, dodawanie nowych zadań, edycję i usuwanie zapisanych zadań, a także zaznaczanie oraz odznaczanie wykonania zadania.\
+Wszystkie okienka mają nawigację do widoku głównego, do podglądu zapisanych zadań i do dodwania nowych zadań.
 
-## Funcjonalności, opis po okienkach
+## Funcjonalności
 
-### Okienko główne
+## Wyświetlanie zadań i manipulacja istniejącymi
 
-Główne okno krótko wyjaśnia do czego służy aplikacja oraz zachęca do skorzystania z nawigacji.
+Aplikacja pozwala na wyświetlanie dodanych już zadań w dwóch kolumnach.\
+Pośród pól zadania jest:
+- tytuł;
+- opis;
+- data;
+- status.
 
-### Okienko dodawania zadania
+Dla istniejących, wyświetlanych zadań można wykonać następujące czynności: zaznaczyć/odznaczyć wykonanie zadania, dokonać edycji treści zadania, usunąć jedno lub wszystkie zadania.
 
-Okno, które pobiera dane o nowym zadaniu od użytkownika.\
-Zadanie ma formę:
+## Dodawanie zadań
 
-> Tytuł zadania\
-> Opis zadania\
-> Data wykonania zadania\
-> Informacja o wykonaniu zadania
-
-Z powyższych wyłącznie tytył jest wymagany.
+Aplikacja pozwala na dopisywanie do bazy kolejnych zadań z formularza dostępnego dla użytkownika.\
+Spośród pól zadań wyłącznie tytył jest wymagany.
 
 ### Okienko listy
 
