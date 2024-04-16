@@ -18,6 +18,13 @@
                     <p>Finish date: <%= task.finishDate ? task.finishDate : 'No deadline set' %></p>
                     <p>Status: <%= task.done ? 'Completed' : 'Not completed' %></p>
                     <div class="task-actions">
+                        <form action="/mark/<%= task.id %>" method="post">
+                            <% if (task.done) { %>
+                                <button type="submit">Unmark</button>
+                            <% } else { %>
+                                <button type="submit">Mark</button>
+                            <% } %>
+                        </form>
                         <form action="/edit-task/<%= task.id %>" method="get">
                             <button type="submit">Edit</button>
                         </form>

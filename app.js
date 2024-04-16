@@ -35,6 +35,8 @@ app.get('/success-delete', tasksController.getSuccessDelete);
 app.get('/delete-all', tasksController.getDeleteAllTasks);
 app.get('/success-all-delete', tasksController.getSuccessAllDelete);
 
+app.post('/mark/:id', tasksController.postMarkTask);
+
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
 });

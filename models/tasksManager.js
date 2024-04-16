@@ -66,11 +66,34 @@ function deleteAllTasks() {
 }
 
 function markTaskAsDone(id) {
-    const tasks = loadTasks();
+    let tasks = loadTasks();
     let taskToUpdate = getTask(id);
     taskToUpdate.markAsDone();
     saveTasks(tasks);
 }
+
+function markTaskAsUndone(id) {
+    let tasks = loadTasks();
+    let taskToUpdate = getTask(id);
+    taskToUpdate.markAsUndone();
+    saveTasks(tasks);
+}
+
+function markTaskOppositeStatus(id) {
+    let tasks = loadTasks();
+    tasks.forEach(task => {
+        if (task.id === id) {
+            if (task.done) {
+                task.markAsUndone();
+            }
+            else {
+                task.markAsDone();
+            }
+        }
+    });
+    saveTasks(tasks);
+}
+
 
 // Zwraca pierwszy wolny identyfikator dla Task-a
 function getFreeId() {
@@ -100,5 +123,7 @@ module.exports = {
     updateTask,
     getFreeId,
     markTaskAsDone,
+    markTaskAsUndone,
     deleteAllTasks,
+    markTaskOppositeStatus,
 };

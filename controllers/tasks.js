@@ -7,7 +7,7 @@ let successMessage = '';
 
 const getTaskList = (req, res) => {
     const tasks = taskManager.loadTasks();
-    console.log(tasks);
+    //console.log(tasks);
     res.render('Task-list', {pageTitle: 'Tasks List', tasks: tasks});
 }
 const getSuccess = (req, res) => {
@@ -76,6 +76,16 @@ const getSuccessAllDelete = (req, res) => {
     getSuccess(req, res);
 }
 
+const postMarkTask = (req, res) => {
+    const {id} = req.params;
+    const fixedId = parseInt(id);
+    console.log(fixedId);
+    console.log(typeof fixedId);
+    console.log(taskManager.getTask(fixedId));
+    taskManager.markTaskOppositeStatus(fixedId);
+    res.redirect('/tasks-list');
+}
+
 module.exports = {
     getTaskList,
 
@@ -92,4 +102,6 @@ module.exports = {
 
     getDeleteAllTasks,
     getSuccessAllDelete,
+
+    postMarkTask,
 }

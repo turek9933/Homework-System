@@ -21,6 +21,9 @@ class Task {
     markAsDone() {
       this.done = true;
     }
+    markAsUndone() {
+      this.done = false;
+    }
     updateTask(newTitle, newDescription, newFinishDate, newDone) {
       this.updateTitle(newTitle);
       this.updateDescription(newDescription);
