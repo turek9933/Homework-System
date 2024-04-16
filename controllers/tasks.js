@@ -1,13 +1,9 @@
-const express = require('express');
 const taskManager = require('../models/tasksManager');
-
-const router = express.Router();
 
 let successMessage = '';
 
 const getTaskList = (req, res) => {
     const tasks = taskManager.loadTasks();
-    //console.log(tasks);
     res.render('Task-list', {pageTitle: 'Tasks List', tasks: tasks});
 }
 const getSuccess = (req, res) => {
@@ -20,8 +16,6 @@ const getAddTask = (req, res) => {
 const postAddTask = (req, res) => {
     const {title, description, finishDate, done} = req.body;
     const fixedDone = done === 'true' ? true : false;
-    console.log(req.body);
-    console.log(title, description, finishDate, fixedDone);
     taskManager.addTask(title, description, finishDate, fixedDone);
     res.redirect('/success-add');
 }
@@ -34,9 +28,6 @@ const getEditTask = (req, res) => {
     const {id} = req.params;
     const fixedId = parseInt(id);
     const task = taskManager.getTask(fixedId);
-    console.log(fixedId);
-    console.log(typeof fixedId);
-    console.log(task);
     res.render('Edit-task', {pageTitle: 'Edit Task', task: task});
 }
 const postEditTask = (req, res) => {
@@ -44,8 +35,6 @@ const postEditTask = (req, res) => {
     const fixedId = parseInt(id);
     const {title, description, finishDate, done} = req.body;
     const fixedDone = done === 'true' ? true : false;
-    console.log(req.body);
-    console.log(fixedId, title, description, finishDate, fixedDone);
     taskManager.updateTask(fixedId, title, description, finishDate, fixedDone);
     res.redirect('/success-edit');
 }
@@ -57,8 +46,6 @@ const getSuccessEdit = (req, res) => {
 const postDeleteTask = (req, res) => {
     const {id} = req.params;
     const fixedId = parseInt(id);
-    console.log(fixedId);
-    console.log(typeof fixedId);
     taskManager.deleteTask(fixedId);
     res.redirect('/success-delete');
 }
@@ -79,9 +66,6 @@ const getSuccessAllDelete = (req, res) => {
 const postMarkTask = (req, res) => {
     const {id} = req.params;
     const fixedId = parseInt(id);
-    console.log(fixedId);
-    console.log(typeof fixedId);
-    console.log(taskManager.getTask(fixedId));
     taskManager.markTaskOppositeStatus(fixedId);
     res.redirect('/tasks-list');
 }

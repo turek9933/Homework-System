@@ -42,9 +42,7 @@ function addTask(title, description, finishDate, done, id = getFreeId()) {
 
 function deleteTask(id) {
     const tasks = loadTasks();
-    tasks.forEach(task => { console.log(task.id, task.id !== id); });
     const fixedTasks = tasks.filter(task => task.id !== id);
-    console.log(fixedTasks);
     saveTasks(fixedTasks);
 }
 
@@ -55,9 +53,7 @@ function getTask(id) {
 
 function updateTask(id, newTitle, newDescription, newFinishDate, newDone) {
     let tasks = loadTasks();
-    console.log(tasks);
     tasks.find(task => task.id === id).updateTask(newTitle, newDescription, newFinishDate, newDone);
-    console.log(tasks);
     saveTasks(tasks);
 }
 
