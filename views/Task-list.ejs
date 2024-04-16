@@ -16,7 +16,7 @@
                     -->
                     <p>Description: <%= task.description || 'No description provided' %></p>
                     <p>Finish date: <%= task.finishDate ? task.finishDate : 'No deadline set' %></p>
-                    <p>Status: <%= task.done ? 'Completed' : 'Not completed' %></p>
+                    <p class="<%= task.done ? 'done' : 'undone' %>">Status: <%= task.done ? 'Completed' : 'Not completed' %></p>
                     <div class="task-actions">
                         <form action="/mark/<%= task.id %>" method="post">
                             <% if (task.done) { %>

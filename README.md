@@ -37,10 +37,15 @@ Dla istniejących, wyświetlanych zadań można wykonać następujące czynnośc
 Aplikacja pozwala na dopisywanie do bazy kolejnych zadań z formularza dostępnego dla użytkownika.\
 Spośród pól zadań wyłącznie tytył jest wymagany.
 
-### Okienko listy
+# Instrukcja instalacji i obsługi
 
-Okienko pobiera z pliku zapisane zadania i wyświetla ich treść na ekranie.\
-Pojawia się tutaj również ID zadania, zatem mimo wprowadzenia identycznych zadań użytkownik może je rozróżniać.
+## Opis instalacji
 
-Ponadto z tego okienka użytkownik może zadecydować o edycji i/lub usunięciu zadań.
-<!--TODO TO DELETE Jak może edytować, usuwać zadania?!?!-->
+Wymagane narzędzia:
+- Node.js;
+- npm;
+- Git.
+
+
+
+## Opis obsługi
