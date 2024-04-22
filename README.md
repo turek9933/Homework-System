@@ -41,10 +41,29 @@ Spośród pól zadań wyłącznie tytył jest wymagany.
 
 ## Opis instalacji
 
-Wymagane narzędzia:
-- Node.js;
-- npm;
-- Git.
+#### Wymagania:
+- Node.js - zainstlowany Node.js (oficjalna strona: https://nodejs.org/);
+- npm - Node Package Manager - dostarczany wraz z Node.js;
+- Git - zainstalowana obsługa repozytoriów (oficjalna strona: https://git-scm.com).
+
+#### Instalacja:
+1. Sklonuj repozytorium do wybranego folderu używając Gita. Otwórz terminal i wpisz następujące polecenie:\
+
+Przejdź do wybranego folderu:\
+Windows:
+> cd Dysk:\sciezka\gdzie\ma\byc\aplikacja
+
+Linux:
+> cd /sciezka/gdzie/ma/byc/aplikacja
+
+Sklonuj repozytorium:
+> git clone https://github.com/turek9933/Homework-System.git
+
+Przejdź komendą do katalogu aplikacji:
+> cd Homework-System
+
+
+
 
 
 
