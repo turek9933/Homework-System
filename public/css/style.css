@@ -141,3 +141,8 @@ li p {
     width: fit-content;
     background-color: #ff000055;
 }
+
+.home {
+    text-align: center;
+    margin-top: 20px;
+}

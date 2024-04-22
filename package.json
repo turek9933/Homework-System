@@ -1,5 +1,32 @@
 {
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
     "express": "^4.19.2"
-  }
+  },
+  "name": "homwork-system",
+  "description": "System zarządzania zadaniami domowymi - Projekt na studia - Wzorzec MVC\\\r Tomasz Turek\\\r 08.04.2024r.\\\r v.1.0",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "start http://localhost:3000 & node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turek9933/Homework-System.git"
+  },
+  "keywords": [
+    "homework",
+    "system",
+    "task",
+    "tasks",
+    "project"
+  ],
+  "author": "Tomasz Turek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/turek9933/Homework-System/issues"
+  },
+  "homepage": "https://github.com/turek9933/Homework-System#readme"
 }

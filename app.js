@@ -21,5 +21,5 @@ app.use(homeRouter);
 app.use(tasksRouter);
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port: ${PORT}`);
+    console.log(`Server is running on adress:\nhttp://localhost:${PORT}`);
 });
