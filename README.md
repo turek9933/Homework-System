@@ -11,13 +11,18 @@ v.1.0
 1. [Opis projektu i funkcjonalności](#opis-projektu-i-funkcjonalności)
     1. [Opis ogólny](#opis-ogólny)
     2. [Funkcjonalności](#funcjonalności)
+2. [Instrukcja instalacji i obsługi](#instrukcja-instalacji-i-obsługi)
+    1. [Opis instalacji](#opis-instalacji)
+    2. [Instrukcja obsługi](#instrukcja-obsługi)
 
 # Opis projektu i funkcjonalności
 
 ## Opis ogólny
 
 Aplikacja jest przeglądarkowa. Służy ona do zarządzania zadaniami użytkownika. Pozwala ona na wyświetlanie zapisanych zadań, dodawanie nowych zadań, edycję i usuwanie zapisanych zadań, a także zaznaczanie oraz odznaczanie wykonania zadania.\
-Wszystkie okienka mają nawigację do widoku głównego, do podglądu zapisanych zadań i do dodwania nowych zadań.
+Wszystkie okienka mają nawigację do widoku głównego, do podglądu zapisanych zadań i do dodwania nowych zadań.\
+Aplikacja jest dostarczana z przykładowymi zadaniami, które oczywiście można usunąć.\
+W ramach aplikacji są wykorzystywane paczki: Body-parser; EJS; Express.
 
 ## Funcjonalności
 
@@ -70,7 +75,7 @@ Przejdź komendą do katalogu aplikacji:
 Pobierz skompresowaną (.ZIP) zawartość repozytorium. Znajduje się ona na głównej stronie repozytorium. Ścieżka do znalezienia:\
 '<> Code>' -> 'Local' -> 'Download ZIP
 
-![Github screenshot pobrania](./Download_ZIP_Screenshot.png)
+![Github screenshot pobrania](./screenshots/Download_ZIP_Screenshot.png)
 
 Wypakuj następnie pobraną zawartość do wybranego folderu (za pomocą np. aplikacji 7-Zip).
 
@@ -96,9 +101,36 @@ Jeśli na Linuxie nie skrypt nie działa to prawdopodobnie trzeba nadać mu atry
 
 
 
-
 Program będzie dostępny do czasu wyłączenia ostatniej komendy lub skryptu pod adresem:\
 http://localhost:3000
 
 
-## Opis obsługi
+## Instrukcja obsługi
+
+Aplikacja jest przeglądarkowa. Po uruchomieniu jest dostępna pod adresem: http://localhost:3000
+
+#### Okienko Home
+Powinna ona generować okienko tytułowe, gdzie opisuje krótko funkcjonalności i zachęca do korzystania z nawigacji.
+![Home Screenshot](./screenshots/Home_Screenshot.png)
+
+Za pomocą nawigacji można przejść do okienka z listą zadań lub do okieka, gdzie można dodać nowe zadanie.
+
+#### Okienko Add new task
+Pozwala na dodanie nowego zadania do listy. Możemy dodać tytuł, opis, datę planowanego ukończenia oraz informację, czy jest ono już wykonane.
+![Add new Task Screenshot](./screenshots/Add_Task_Screenshot.png)
+
+Po naciśnięciu przycisku 'Add Task', zostaniemy przeniesieni do okienka z informacją o sukcesie dodanego zadania.
+
+#### Okienko Success
+W przypadku dodania, edycji, usunięcia zadania lub usunięcia wszystkich zadań zostajemy przekierowani na stronę z odpowiednim komunikatem.
+![Success Screenshot](./screenshots/Success_Screenshot.png)
+
+#### Okienko Tasks List
+Pozwala na ogądanie dodanych już zadań.
+Możemy za pomocą przycisków: zaznaczyć/odznaczyć wykonanie danego zadania; edytować dane zadanie; usunąć dane zadanie; usunąć wszystkie zadania.
+![Tasks List Screenshot](./screenshots/Tasks_List_Screenshot.png)
+
+#### Okienko Edit Task
+Edycja zadania odbywa się w osobnym okienku, identycznym jak okienko do dodawania zadań.
+![Edit Task Screenshot](./screenshots/Edit_Task_Screenshot.png)
+
