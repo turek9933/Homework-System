@@ -41,13 +41,16 @@ Spośród pól zadań wyłącznie tytył jest wymagany.
 
 ## Opis instalacji
 
-#### Wymagania:
+### Wymagania:
 - Node.js - zainstlowany Node.js (oficjalna strona: https://nodejs.org/);
 - npm - Node Package Manager - dostarczany wraz z Node.js;
 - Git - zainstalowana obsługa repozytoriów (oficjalna strona: https://git-scm.com).
 
-#### Instalacja:
-1. Sklonuj repozytorium do wybranego folderu używając Gita. Otwórz terminal i wpisz następujące polecenie:\
+### Instalacja:
+Składa się z dwóch części: Pobrania zawartości repozytorium oraz z uruchomienia aplikacji.
+
+#### Pobranie zawartości repozytorium - Sposób I
+Sklonuj repozytorium do wybranego folderu używając Gita. Otwórz terminal i wpisz następujące polecenie:\
 
 Przejdź do wybranego folderu:\
 Windows:
@@ -62,9 +65,40 @@ Sklonuj repozytorium:
 Przejdź komendą do katalogu aplikacji:
 > cd Homework-System
 
+#### Pobranie zawartości repozytorium - Sposób II
+
+Pobierz skompresowaną (.ZIP) zawartość repozytorium. Znajduje się ona na głównej stronie repozytorium. Ścieżka do znalezienia:\
+'<> Code>' -> 'Local' -> 'Download ZIP
+
+![Github screenshot pobrania](./Download_ZIP_Screenshot.png)
+
+Wypakuj następnie pobraną zawartość do wybranego folderu (za pomocą np. aplikacji 7-Zip).
+
+Przejdź do wypakowanego katalogu. Może on mieć ścieżkę dostępu np.:
+> C:\Users\account\Downloads\Homework-System-main\Homework-System-main
+
+#### Uruchomienie aplikacji - Sposób I
+
+Wewnątrz katalogu z aplikacją uruchom terminal.
+
+Zainstaluj niezbędne komponenty aplikacji (opcjonalnie):
+> npm install
+
+Uruchom serwer: 
+> npm start
+
+#### Uruchomienie aplikacji - Sposób II
+
+Wewnątrz katalogu z aplikacją znajdź i uruchom skrypt o nazwie 'start-app.bat' - dla Windowsa lub 'start-app.sh' - dla Linuxa.
+
+Jeśli na Linuxie nie skrypt nie działa to prawdopodobnie trzeba nadać mu atrybut wykonywalności. Uruchom terminal w miejscu skryptu i wpisz:
+> chmod +x start-app.sh
 
 
 
+
+Program będzie dostępny do czasu wyłączenia ostatniej komendy lub skryptu pod adresem:\
+http://localhost:3000
 
 
 ## Opis obsługi
