@@ -5,6 +5,7 @@ const path = require('path');
 
 const homeRouter = require('./routes/home');
 const tasksRouter = require('./routes/tasks');
+const errorRouter = require('./routes/error');
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(homeRouter);
 
 app.use(tasksRouter);
+
+app.use(errorRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running on adress:\nhttp://localhost:${PORT}`);

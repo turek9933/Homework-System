@@ -97,14 +97,15 @@ function getFreeId() {
     const maxId = maxTaskId(tasks);
     let resultId = 0;
     if (maxId !== -1) {
+        // Szukamy w while-u, pierwszego id, które jest wolne, którego nie ma w tablicy
+        // (tasks.find() zwraca wtedy undefined)
         while (resultId < maxId) {
-            if (
-                tasks.find(task => task.id === resultId) === undefined
-            ) {
+            if (tasks.find(task => task.id === resultId) === undefined) {
                 break;
             }
             resultId += 1;
         }
+        // Jeśli wszystkie id do maxId są użyte, rezultatem będzie maxId + 1
         resultId = resultId === maxId ? maxId + 1 : resultId;
     }
     return resultId;

@@ -134,3 +134,7 @@ Możemy za pomocą przycisków: zaznaczyć/odznaczyć wykonanie danego zadania; 
 Edycja zadania odbywa się w osobnym okienku, identycznym jak okienko do dodawania zadań.
 ![Edit Task Screenshot](./screenshots/Edit_Task_Screenshot.png)
 
+#### Okienko Not found
+Wyświetla informację, że wpisano nieobsługiwany adres. Zachęca do użycia nawigacji w celu powrotu.
+![Error Screenshot](./screenshots/Error_Screenshot.png)
+

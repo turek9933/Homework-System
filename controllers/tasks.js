@@ -1,13 +1,13 @@
 const taskManager = require('../models/tasksManager');
 
 let successMessage = '';
+const getSuccess = (req, res) => {
+    res.render('Success', {pageTitle: 'Success', successMessage: successMessage});
+}
 
 const getTaskList = (req, res) => {
     const tasks = taskManager.loadTasks();
     res.render('Task-list', {pageTitle: 'Tasks List', tasks: tasks});
-}
-const getSuccess = (req, res) => {
-    res.render('Success', {pageTitle: 'Success', successMessage: successMessage});
 }
 
 const getAddTask = (req, res) => {
