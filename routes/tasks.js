@@ -16,7 +16,7 @@ router.get('/success-edit', tasksController.getSuccessEdit);
 router.post('/delete-task/:id', tasksController.postDeleteTask);
 router.get('/success-delete', tasksController.getSuccessDelete);
 
-router.get('/delete-all', tasksController.getDeleteAllTasks);
+router.post('/delete-all', tasksController.getDeleteAllTasks);
 router.get('/success-all-delete', tasksController.getSuccessAllDelete);
 
 router.post('/mark/:id', tasksController.postMarkTask);
