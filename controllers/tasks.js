@@ -1,12 +1,7 @@
-const taskManager = require('../models/tasksManager');
-
-let successMessage = '';
-const getSuccess = (req, res) => {
-    res.render('Success', {pageTitle: 'Success', successMessage: successMessage});
-}
+const Task = require('../models/task');
 
 const getTaskList = (req, res) => {
-    const tasks = taskManager.loadTasks();
+    const tasks = Task.loadTasks();
     res.render('Task-list', {pageTitle: 'Tasks List', tasks: tasks});
 }
 
@@ -16,18 +11,17 @@ const getAddTask = (req, res) => {
 const postAddTask = (req, res) => {
     const {title, description, finishDate, done} = req.body;
     const fixedDone = done === 'true' ? true : false;
-    taskManager.addTask(title, description, finishDate, fixedDone);
+    Task.addTask(title, description, finishDate, fixedDone);
     res.redirect('/success-add');
 }
 const getSuccessAdd = (req, res) => {
-    successMessage = 'Task added successfully';
-    getSuccess(req, res);
+    res.render('Success', {pageTitle: 'Success', successMessage: 'Task added successfully'});
 }
 
 const getEditTask = (req, res) => {
     const {id} = req.params;
     const fixedId = parseInt(id);
-    const task = taskManager.getTask(fixedId);
+    const task = Task.getTask(fixedId);
     res.render('Edit-task', {pageTitle: 'Edit Task', task: task});
 }
 const postEditTask = (req, res) => {
@@ -35,38 +29,35 @@ const postEditTask = (req, res) => {
     const fixedId = parseInt(id);
     const {title, description, finishDate, done} = req.body;
     const fixedDone = done === 'true' ? true : false;
-    taskManager.updateTask(fixedId, title, description, finishDate, fixedDone);
+    Task.updateTask(fixedId, title, description, finishDate, fixedDone);
     res.redirect('/success-edit');
 }
 const getSuccessEdit = (req, res) => {
-    successMessage = 'Task edited successfully';
-    getSuccess(req, res);
+    res.render('Success', {pageTitle: 'Success', successMessage: 'Task edited successfully'});
 }
 
 const postDeleteTask = (req, res) => {
     const {id} = req.params;
     const fixedId = parseInt(id);
-    taskManager.deleteTask(fixedId);
+    Task.deleteTask(fixedId);
     res.redirect('/success-delete');
 }
 const getSuccessDelete = (req, res) => {
-    successMessage = 'Task deleted successfully';
-    getSuccess(req, res);
+    res.render('Success', {pageTitle: 'Success', successMessage: 'Task deleted successfully'});
 }
 
 const getDeleteAllTasks = (req, res) => {
-    taskManager.deleteAllTasks();
+    Task.deleteAllTasks();
     res.redirect('/success-all-delete');
 }
 const getSuccessAllDelete = (req, res) => {
-    successMessage = 'All tasks deleted successfully';
-    getSuccess(req, res);
+    res.render('Success', {pageTitle: 'Success', successMessage: 'All tasks deleted successfully'});
 }
 
 const postMarkTask = (req, res) => {
     const {id} = req.params;
     const fixedId = parseInt(id);
-    taskManager.markTaskOppositeStatus(fixedId);
+    Task.markTaskOppositeStatus(fixedId);
     res.redirect('/tasks-list');
 }
 
